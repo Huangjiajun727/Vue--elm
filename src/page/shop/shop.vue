@@ -182,6 +182,7 @@
           </transition>
         </section>
       </transition>
+
       <transition name="fade-choose">
         <section class="rating-container" id="ratingContainer" v-show="changeShowType =='rating'">
           <section>

@@ -35,16 +35,9 @@ import {getStore,setStore} from "../config/mUtils";
 export default {
   //获取用户信息存入vuex用于登录， 以下很多属性都没有定义，都是在运算中自动生成的，因为js对象的属性可以动态添加
   [GET_USERINFO](state, info) {
-    //只要“&&”前面是false，无论“&&”后面是true还是false，结果都将返“&&”前面的值;
-    // 只要“&&”前面是true，无论“&&”后面是true还是false，结果都将返“&&”后面的值;
     if (state.userInfo && (state.userInfo.username !== info.username)) {
-      //如果本地有用户信息的情况：
-      //如果服务器和本地相同就是false 则继续下一步需要存即登录
-      //如果不相同就是ture 则不进行下一步不需要登录，则说明用户信息版本有问题不存不登录
-      //没有信息的的情况（刷新后vuex数据丢失或没登录过）：则直接进行下一步
       return;
     }
-    //光有用户信息还不行，必须为登录状态（默认状态为ture），如果没登录状态则不存，即不需要登录
     if (!state.login) {
       return
     }

@@ -1,6 +1,5 @@
 import { get, post } from '@/config/http';
 import {getStore} from "@/config/mUtils";
-import fetch from "../../../../0-item/elm/src/config/fetch";
 
 /*获取首页默认地址*/
 export const cityGuess = () => get('/v1/cities',{
@@ -294,7 +293,7 @@ export const ratingTags = shopid => get('/ugc/v2/restaurants/' + shopid + '/rati
  * 获取地址列表
  */
 
-export const getAddress = (id, sig) => fetch('/v1/carts/' + id + '/addresses', {
+export const getAddress = (id, sig) => get('/v1/carts/' + id + '/addresses', {
   sig
 });
 

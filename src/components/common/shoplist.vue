@@ -219,6 +219,7 @@
     color: #333;
   }
   .shop-title {
+    width: 200px;
     color: #333;
     padding-top: .1px;
     font: 15px/15px PingFangSC-Regular;
